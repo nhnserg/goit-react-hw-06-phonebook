@@ -1,3 +1,4 @@
+import React from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { getFilter } from '../../redux/selector';
 import { onInputChangeAction } from '../../redux/filter/filterSlice';
