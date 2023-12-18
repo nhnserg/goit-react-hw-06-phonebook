@@ -1,7 +1,7 @@
 import { nanoid } from '@reduxjs/toolkit';
 import { useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { getContacts } from '../../redux/selector';
+import { getContacts } from '../../redux/contacts/selector';
 import { addContactAction } from '../../redux/contacts/contactSlice';
 import { Container, Label, Input, Button } from './ContactForm.styled';
 
@@ -22,12 +22,12 @@ export const ContactForm = () => {
 
   const handleSubmit = e => {
     e.preventDefault();
-    addContact({ name, number });
+    addContactAction({ name, number });
     setName('');
     setNumber('');
   };
 
-  const addContact = ({ name, number }) => {
+  const addContactAction = ({ name, number }) => {
     const isExist = contacts.some(
       contact => contact.name.toLowerCase() === name.toLowerCase()
     );

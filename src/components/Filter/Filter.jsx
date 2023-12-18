@@ -1,11 +1,11 @@
 import React from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { getFilter } from '../../redux/selector';
+import { getFilter } from '../../redux/contacts/selector';
 import { onInputChangeAction } from '../../redux/filter/filterSlice';
 import { FilterContainer, FilterLabel, FilterInput } from './Filter.styled';
 
 export const Filter = () => {
-    const filter = useSelector(getFilter);
+    const contact = useSelector(getFilter);
     const dispatch = useDispatch();
 
     const onInputChange = ({ target }) => {
@@ -18,7 +18,7 @@ export const Filter = () => {
             <FilterInput
                 type="text"
                 name="filter"
-                value={filter}
+                value={contact}
                 onChange={onInputChange}
             />
         </FilterContainer>
